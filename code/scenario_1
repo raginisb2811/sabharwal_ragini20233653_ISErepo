@@ -1,1 +1,50 @@
+import time
 
+from string import digits
+
+
+class Main():
+    print("Hello! This Program helps you do a lot of things..")
+    time.sleep(1)
+    option = input("\nPlease enter which option you want to choose...\n"
+                   "A. Converting a given string to upper case or lower case.\n"
+                   "B. Identify whether numeric values are in a given string.\n"
+                   "C. Identify whether a given string is a valid number or not.\n"
+                   "D. Remove any numeric values in a given string and then convert the"
+                   " string to upper case or lower Case.\nAnswer.. ")
+    if option == 'A'.casefold():
+        string = input("Enter a String.. ")
+        string1 = string
+        option_2 = input("Do you want to convert this string in Lower Case(L) or Upper Case(U): ")
+        if option_2 == "L":
+            print(string1.lower())
+        else:
+            print(string1.upper())
+
+    if option == 'B'.casefold():
+        numeric = input("Enter a String With Numbers This will return True if there is any.. ")
+        numeric1 = numeric
+        contains_number = False, "No numeric Value Found"
+        for character in numeric1:
+            if character.isdigit():
+                contains_number = True, "Numeric Value Found"
+        print(contains_number)
+
+    if option == 'C'.casefold():
+        val = input("Enter a String to confirm whether the input data is valid number or NOT... ")
+        txt = val
+        val = txt.isnumeric()
+        print(val)
+
+    if option == 'D'.casefold():
+        num_cut = input("Enter a string with numeric value... ")
+        num_cut1 = num_cut
+        table = num_cut1.maketrans('', '', digits)
+        new_string = num_cut1.translate(table)
+        print(new_string)
+        new = input("Now Do you want to convert this string in Lower Case(L) or Upper Case(U): ")
+        new1 = new
+        if new1 == 'L':
+            print(new_string.lower())
+        else:
+            print(new_string.upper())
