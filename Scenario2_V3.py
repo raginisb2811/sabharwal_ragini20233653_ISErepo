@@ -24,9 +24,6 @@ class Main():
                    "13. To EXIT PRESS (13).\n"
                    "-> ")
 
-    if choice != int:
-        print("Please choose an integer.. Now Re-run the program!")
-
     if choice == "13":
         print("\nSee you again :)")
 
